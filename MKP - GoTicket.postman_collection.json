@@ -1,0 +1,326 @@
+{
+	"info": {
+		"_postman_id": "2180779e-391b-4573-94f5-a084b8521b4a",
+		"name": "MKP - GoTicket",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24874357"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Bayuaji\",\n    \"email\":\"Bayuaji@mail.com\",\n    \"password\":\"12345\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}signup",
+					"host": [
+						"{{local}}signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Bayuaji\",\n    \"email\":\"Bayuaji@mail.com\",\n    \"password\":\"12345\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}signup",
+					"host": [
+						"{{local}}signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Movie List",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}movies",
+					"host": [
+						"{{local}}movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Movie ShowTime",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}movies",
+					"host": [
+						"{{local}}movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ShowTime & Seat Detail",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}movies",
+					"host": [
+						"{{local}}movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Checkout ShowTime & Seat Detail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Ik1pdHJhQG1haWwuY29tIiwiZXhwIjoxNzEwOTQzMjQ1LCJ1c2VySWQiOjJ9.nkMCbWjRDRA2SqzTx3o3hlSv415njLlbI3Er-z4bLHk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"userId\": 1,\n    \"seatId\":9\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}movies/?movieID=1&showtimeID=2&seatID=2",
+					"host": [
+						"{{local}}movies"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "movieID",
+							"value": "1"
+						},
+						{
+							"key": "showtimeID",
+							"value": "2"
+						},
+						{
+							"key": "seatID",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Checkout Detail",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}movies-checkout/6",
+					"host": [
+						"{{local}}movies-checkout"
+					],
+					"path": [
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cancel Checkout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Ik1pdHJhQG1haWwuY29tIiwiZXhwIjoxNzEwOTQzMjQ1LCJ1c2VySWQiOjJ9.nkMCbWjRDRA2SqzTx3o3hlSv415njLlbI3Er-z4bLHk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"checkoutId\": 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}movies",
+					"host": [
+						"{{local}}movies"
+					],
+					"query": [
+						{
+							"key": "movieID",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "showtimeID",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "seatID",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Ik1pdHJhQG1haWwuY29tIiwiZXhwIjoxNzEwOTU0Nzk2LCJ1c2VySWQiOjJ9.p-irGuf_Zxx4ngiR3Kk0W2Q1F7yAyAiA77cBjD7RRjs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userId\": 1,\n  \"checkoutId\": 7,\n  \"amount\": 50000\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}movies-payment",
+					"host": [
+						"{{local}}movies-payment"
+					],
+					"query": [
+						{
+							"key": "movieID",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "showtimeID",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "seatID",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "local",
+			"value": "http://localhost:8080/"
+		}
+	]
+}
