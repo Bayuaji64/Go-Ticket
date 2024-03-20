@@ -26,6 +26,8 @@
 Untuk meminimalisir race condition dan sistem tetap mendapatkan performa yang ideal disini saya menggunakan 3 penedekatan yaitu:
 
 1. Go-routines : Memastikan koneksi terhadap ke database dilakukan prosesnya secara lebih cepat
+
 2. Transaction : Menggunakan prinsip ACID, yang meliputi Atomicity (Kesatuan), Consistency (Konsistensi), Isolation (Pengasingan), dan Durability (Ketahanan), sangat membantu dalam memastikan bahwa ketika banyak pengguna atau sistem mencoba melakukan perubahan data di saat yang sama, perubahan tersebut tidak akan saling mengganggu. Ini berarti sistem dapat mencegah data dari kekacauan atau kerusakan walaupun banyak tugas yang terjadi bersamaan.
+
 3.Scheduled task : Dengan melakukan kombinasi Goroutines dan Ticker yang melakukan operasi pada interval waktu yang teratur yang membuat sistem lebih efisien dan responsif untuk menjalankan sistem secara teratur, tanpa perlu menunggu input pengguna atau event lain.
    - Dalam kasus sistem ini memungkinkan aplikasi untuk secara otomatis memperbarui status kursi yang telah melebihi batas waktu pemesanan yang ditentukan, membebaskan sumber daya yang mungkin terkunci oleh transaksi yang tidak selesai dan memastikan data tetap konsisten dan up-to-date. 
